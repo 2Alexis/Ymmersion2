@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-var templates = template.Must(template.ParseFiles("templates/index.html", "templates/article.html"))
+var templates = template.Must(template.ParseFiles("templates/1accueil.html", "templates/3article.html"))
 
 var blog Blog
 
@@ -24,13 +24,12 @@ func main() {
 	blog = loadedBlog
 
 	// Configuration des gestionnaires de routage
-	http.HandleFunc("/", indexHandler)
-	http.HandleFunc("/article/", articleHandler)
-	http.HandleFunc("/categories", categoriesHandler)
-	http.HandleFunc("/search/", searchHandler)
-	http.HandleFunc("/admin/", adminHandler)
-	http.HandleFunc("/admin/add/", addArticleHandler)
-	http.HandleFunc("/admin/delete/", deleteArticleHandler)
+	http.HandleFunc("/1accueil", indexHandler)
+	http.HandleFunc("/3article", articleHandler)
+	http.HandleFunc("/2categorie", categoriesHandler)
+	http.HandleFunc("/4recherche", searchHandler)
+	http.HandleFunc("/5administration", adminHandler)
+	http.HandleFunc("/6ajout", addArticleHandler)
 
 	// Démarrez le serveur web
 	http.ListenAndServe(":8080", nil)
@@ -87,7 +86,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 	categorie := r.URL.Query().Get("categorie")
 
 	if categorie == "" {
-		templates.ExecuteTemplate(w, "index.html", blog.Articles)
+		templates.ExecuteTemplate(w, "1accueil.html", blog.Articles)
 	} else {
 		var filteredArticles []Article
 		for _, article := range blog.Articles {
@@ -95,13 +94,13 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 				filteredArticles = append(filteredArticles, article)
 			}
 		}
-		templates.ExecuteTemplate(w, "index.html", filteredArticles)
+		templates.ExecuteTemplate(w, "1accueil.html", filteredArticles)
 	}
 }
 
 // Gestionnaire pour la page des catégories
 func categoriesHandler(w http.ResponseWriter, r *http.Request) {
-	templates.ExecuteTemplate(w, "categories.html", blog.Articles)
+	templates.ExecuteTemplate(w, "2categorie.html", blog.Articles)
 }
 
 func articleHandler(w http.ResponseWriter, r *http.Request) {
@@ -129,7 +128,7 @@ func articleHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Exécuter le template spécifique pour l'article
-	templates.ExecuteTemplate(w, "article.html", foundArticle)
+	templates.ExecuteTemplate(w, "3article.html", foundArticle)
 }
 
 // Gestionnaire pour la recherche
@@ -142,7 +141,7 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
 			results = append(results, article)
 		}
 	}
-	templates.ExecuteTemplate(w, "index.html", results)
+	templates.ExecuteTemplate(w, "1accueil.html", results)
 }
 
 // Gestionnaire pour la partie administration
