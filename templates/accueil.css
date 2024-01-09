@@ -1,0 +1,100 @@
+header{
+    height: 250px;
+}
+
+body {
+    background-color: grey;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(70, 70, 70);
+    height: 50px;
+}
+
+div {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    text-align: center;
+    align-items: center;
+}
+
+.en-tête {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+
+.nom {
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    text-decoration-color: rgb(76, 0, 255);
+}
+
+h1::first-letter {
+    font-size: 50px;
+    color: rgb(76, 0, 255);
+}
+
+h2::first-letter {
+    font-size: 50px;
+    color: rgb(76, 0, 255);
+}
+
+.nom2 {
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    text-decoration-color: rgb(76, 0, 255);
+
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(70, 70, 70);
+    justify-content: space-between;
+}
+
+.concepteurs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: whitesmoke
+}
+
+
+.informations{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+}
+
+
+a:link {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+@media screen and (max-width: 767px) {
+    .en-tête {
+        flex-direction: column;
+    }
+
+    .conteneur {
+        flex-direction: column;
+    }
+
+    .main {
+        flex-direction: column;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+}
