@@ -37,10 +37,11 @@ func readCSV(filePath string) (Blog, error) {
 	var blog Blog
 	for _, record := range records {
 		article := Article{
-			ID:       len(blog.Articles) + 1,
-			Category: record[0],
-			Title:    record[1],
-			Content:  record[2],
+			ID:        len(blog.Articles) + 1,
+			Categorie: record[0],
+			Titre:     record[1],
+			Contenu:   record[2],
+			Images:    record[3],
 		}
 		blog.Articles = append(blog.Articles, article)
 	}
