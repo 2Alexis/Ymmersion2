@@ -1,0 +1,19 @@
+{{ define "index.html" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    <h1>Blog</h1>
+    {{ range . }}
+        <div>
+            <h2><a href="/article/{{ .ID }}">{{ .Title }}</a></h2>
+            <p>{{ .Content }}</p>
+        </div>
+    {{ end }}
+</body>
+</html>
+{{ end }}

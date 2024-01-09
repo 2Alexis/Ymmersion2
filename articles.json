@@ -1,0 +1,383 @@
+{
+    "articles": [
+      {
+        "categorie": "Tops 10",
+        "titre": "Top 10 des sports",
+        "auteur": "Simon Galinier",
+        "contenu": "Le rugby est-il un sport impopulaire sur le plan mondial ? Selon le classement publié par le média américain Sports Browser, on est en droit de le penser. En effet, ce site a réalisé le top 10 des sports les plus populaires au monde et le rugby n’arrive seulement qu’en 9e position, derrière le volley (6e) ou le tennis de table (7e), des disciplines qui semblaient pourtant plus confidentielles que l’ovalie. En pôle position, on retrouve bien sûr le football, sport universel s’il en est.
+
+        Entre 390 et 410 millions de fans de rugby dans le monde
+        Classé à égalité avec le football américain et juste derrière le baseball (8e) et ses 500 millions de fans, le rugby compterait entre 390 et 410 millions de fans sur la planète, principalement en Europe (France et Angleterre) et dans l’hémisphère sud (Nouvelle-Zélande, Australie et Afrique du Sud) : « Ce sport s’est étendu aussi à une grande partie de la Polynésie, ayant des adeptes particulièrement forts aux Fidji, aux Samoa et aux Tonga », ajoute Sports Browser. « Toutefois, le rugby n’est populaire que dans une poignée de pays. Dans d’autres pays, le sport ne jouit que d’une popularité limitée. »
+        
+        Là où le bât blesse, c’est également en termes d’exposition télévisuelle : « L’audience TV est assez bonne dans les nations pratiquant le rugby, mais elle est négligeable dans d’autres pays », explique le média américain. En ce qui concerne, les « accords de droits TV pour les tournois de rugby, ils ne sont pas aussi importants que le football, le cricket ou le tennis, mais ils restent assez coûteux ».
+        
+        Enfin, en ce qui concerne l’égalité des genres et l’accès au grand public, le rugby est là aussi à la traîne : « C’est un sport à prédominance masculine tant au niveau professionnel qu’amateur et qui ne bénéficie pas d’un bon accès au grand public par rapport à d’autres sports, principalement en raison de sa nature et de la grande surface requise ».
+        
+        Le Top 10 des sports les plus populaires en 2022 :
+        Football (3,5 milliards de fans) – popularité : Europe, Afrique, Asie et Amérique
+        Cricket (2,5 milliards de fans) – popularité : Asie, Australie et Royaume-Uni
+        Basketball (2,2 milliards de fans) – popularité : USA, Canada, Chine et Philippines
+        Hockey sur gazon (2 milliards de fans) – popularité : Europe, Afrique, Asie et Australie
+        Tennis (1 milliard de fans) – popularité : Europe, Amériques et Asie
+        Volley-ball (900 millions de fans) – popularité : Asie, Europe, Amériques et Australie
+        Tennis de table (850M de fans) – popularité : Asie, Europe, Afrique et Amériques
+        Baseball (500M de fans) popularité : États-Unis, Japon, Cuba et République dominicaine
+        Rugby/Football américain (410M de fans) : France, Angleterre, Nouvelle-Zélande, Afrique du Sud (rugby) et USA principalement (football américain)
+        Golf (390M de fans) – popularité : Europe, Asie, Amérique, Canada",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tops 10",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tops 10",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tops 10",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tops 10",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tops 10",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tops 10",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tops 10",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tops 10",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tops 10",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tutoriels",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tutoriels",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tutoriels",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tutoriels",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tutoriels",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tutoriels",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tutoriels",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tutoriels",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tutoriels",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Tutoriels",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Nouveautes",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Nouveautes",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Nouveautes",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Nouveautes",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Nouveautes",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Nouveautes",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Nouveautes",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Nouveautes",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Nouveautes",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      },
+      {
+        "categorie": "Nouveautes",
+        "titre": "Teamfight Tactics",
+        "auteur": "Riot Games",
+        "contenu": "...",
+        "images": {
+          "map": "chemin/vers/image_map_tft.jpg",
+          "background": "chemin/vers/image_background_tft.jpg",
+          "studio": "chemin/vers/image_studio_tft.jpg",
+          "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        }
+      }
+    ]
+}
