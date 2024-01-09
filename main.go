@@ -1,8 +1,11 @@
 package main
 
 import (
+	"encoding/json"
+	"fmt"
 	"html/template"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -12,12 +15,18 @@ var templates = template.Must(template.ParseFiles("templates/index.html", "templ
 var blog Blog
 
 func main() {
-	// Chargez les données depuis un fichier CSV
-	blog, _ = readCSV("articles.csv")
+	loadedBlog, err := readJSON("articles.json")
+	if err != nil {
+		fmt.Println("Erreur lors de la lecture du fichier JSON:", err)
+		return
+	}
+
+	blog = loadedBlog
 
 	// Configuration des gestionnaires de routage
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/article/", articleHandler)
+	http.HandleFunc("/categories", categoriesHandler)
 	http.HandleFunc("/search/", searchHandler)
 	http.HandleFunc("/admin/", adminHandler)
 	http.HandleFunc("/admin/add/", addArticleHandler)
@@ -27,35 +36,100 @@ func main() {
 	http.ListenAndServe(":8080", nil)
 }
 
-// Gestionnaire pour la page d'accueil
+type Article struct {
+	ID        int    `json:"id"`
+	Categorie string `json:"categorie"`
+	Titre     string `json:"titre"`
+	Contenu   string `json:"contenu"`
+	Images    Image  `json:"images"`
+}
+
+type Image struct {
+	URL string `json:"url"`
+}
+
+// Blog représente une collection d'articles
+type Blog struct {
+	Articles []Article `json:"articles"`
+}
+
+func readJSON(filePath string) (Blog, error) {
+	file, err := os.Open(filePath)
+	if err != nil {
+		return Blog{}, fmt.Errorf("erreur lors de l'ouverture du fichier JSON: %v", err)
+	}
+	defer file.Close()
+
+	decoder := json.NewDecoder(file)
+	var blog Blog
+	err = decoder.Decode(&blog)
+	if err != nil {
+		return Blog{}, fmt.Errorf("erreur lors du décodage du fichier JSON: %v", err)
+	}
+
+	return blog, nil
+}
+
+// Fonction pour écrire les articles dans un fichier JSON
+func writeJSON(filePath string, blog Blog) error {
+	file, err := os.Create(filePath)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	encoder := json.NewEncoder(file)
+	encoder.SetIndent("", "  ")
+
+	return encoder.Encode(blog)
+}
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	categorie := r.URL.Query().Get("categorie")
 
-	var filteredArticles []Article
-	if categorie != "" {
+	if categorie == "" {
+		templates.ExecuteTemplate(w, "index.html", blog.Articles)
+	} else {
+		var filteredArticles []Article
 		for _, article := range blog.Articles {
 			if strings.ToLower(article.Categorie) == strings.ToLower(categorie) {
 				filteredArticles = append(filteredArticles, article)
 			}
 		}
-	} else {
-		filteredArticles = blog.Articles
+		templates.ExecuteTemplate(w, "index.html", filteredArticles)
 	}
-
-	templates.ExecuteTemplate(w, "index.html", filteredArticles)
 }
 
-// Gestionnaire pour la page d'article
+// Gestionnaire pour la page des catégories
+func categoriesHandler(w http.ResponseWriter, r *http.Request) {
+	templates.ExecuteTemplate(w, "categories.html", blog.Articles)
+}
+
 func articleHandler(w http.ResponseWriter, r *http.Request) {
 	// Extraire l'ID de l'article de l'URL
 	id := strings.TrimPrefix(r.URL.Path, "/article/")
+	articleID, err := strconv.Atoi(id)
+	if err != nil {
+		http.Error(w, "Invalid article ID", http.StatusBadRequest)
+		return
+	}
+
+	// Rechercher l'article par ID
+	var foundArticle *Article
 	for _, article := range blog.Articles {
-		if id == strconv.Itoa(article.ID) {
-			templates.ExecuteTemplate(w, "article.html", article)
-			return
+		if article.ID == articleID {
+			foundArticle = &article
+			break
 		}
 	}
-	http.NotFound(w, r)
+
+	// Vérifier si l'article a été trouvé
+	if foundArticle == nil {
+		http.NotFound(w, r)
+		return
+	}
+
+	// Exécuter le template spécifique pour l'article
+	templates.ExecuteTemplate(w, "article.html", foundArticle)
 }
 
 // Gestionnaire pour la recherche
