@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajout nouvelle page</title>
+    <title>Erreur 404</title>
     <link rel="stylesheet" href="../static/1accueil.css">
 </head>
 
@@ -34,34 +34,23 @@
             </form>
         </div>
     </header>
-    <h1>Ajoutez votre article</h1>
-    <form id="articleForm" class="formulaire">
 
-        <label for="categorie">Catégorie de l'article</label>
-        <input type="text" id="categorie" name="categorie" required>
 
-        <label for="title">Titre de l'article:</label>
-        <input type="text" id="title" name="title" required>
+    <div class="erreur404">
+    <img src="../static/image/erreur-404.webp" alt="image erreur 404" >
+    </div>
 
-        <label for="auteur">Auteur de l'article:</label>
-        <input type="text" id="auteur" name="auteur" required>
 
-        <label for="content">Contenu de l'article:</label>
-        <textarea id="content" name="content" rows="8" required></textarea>
 
-        <label for="image">Image de l'article:</label>
-        <input type="file" id="image" name="image" accept="image/*">
 
-        <button type="submit">Ajouter l'article</button>
-    </form>
 
-    <script>
-        document.getElementById('articleForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Ajoutez ici le code pour envoyer les données du formulaire à votre serveur
-            // par exemple, en utilisant fetch() ou une autre méthode.
-        });
-    </script>
+
+
+
+
+
+
+
 
     <footer>
         <div class="concepteurs">
