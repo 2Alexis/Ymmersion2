@@ -1,4 +1,4 @@
-{{define "index.html"}}
+{{define "article.html"}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="en-tête">
-            <div><a href="/templates/index.html">
+            <div><a href="/templates/index/">
                 <img src="../static/image/LogoActiveSports.png" alt="Logo du blog" width="124" height="124"></a>
             </div>
             <div class="nom">
@@ -22,9 +22,9 @@
             </div>
         </div>
         <div class="menu">
-            <a href="/templates/category1.html" style="color: black;"> Tops 10</a>
-            <a href="/templates/category2.html" style="color: black;"> Tutoriels</a>
-            <a href="/templates/category3.html" style="color: black;"> Nouveautes</a>
+            <a href="/category1/" style="color: black;"> Tops 10</a>
+            <a href="/category2" style="color: black;"> Tutoriels</a>
+            <a href="/category3/" style="color: black;"> Nouveautes</a>
             <form class="recherche" action="/" method="GET">
                 <label for="search">Rechercher un article:</label>
                 <input type="text" id="search" name="term" placeholder="Entrez le titre">

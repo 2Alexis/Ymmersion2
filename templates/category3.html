@@ -1,19 +1,17 @@
-{{define "category1.html"}}
+{{define "category3.html"}}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/1accueil.css">
     <title>Nouveautés</title>
-    <link rel="stylesheet" href="../static/1accueil.css">
 </head>
-
 <body>
     <header>
         <div class="en-tête">
-            <div><a href="/templates/index.html">
+            <div><a href="/">
                 <img src="../static/image/LogoActiveSports.png" alt="Logo du blog" width="124" height="124"></a>
             </div>
             <div class="nom">
@@ -24,9 +22,9 @@
             </div>
         </div>
         <div class="menu">
-            <a href="/templates/category1.html" style="color: black;"> Tops 10</a>
-            <a href="/templates/category2.html" style="color: black;"> Tutoriels</a>
-            <a href="/templates/category3.html" style="color: black;"> Nouveautes</a>
+            <a href="/category1/" > Tops 10</a>
+            <a href="/category2/" > Tutoriels</a>
+            <a href="/category3/" > Nouveautes</a>
             <form class="recherche" action="/" method="GET">
                 <label for="search">Rechercher un article:</label>
                 <input type="text" id="search" name="term" placeholder="Entrez le titre">
@@ -36,74 +34,10 @@
     </header>
     <h1>Nouveautés</h1>
     {{range .}}
-    <div class="liste article"></div>
-    <div class="article">
-        <!-- Utiliser l'ID dans le lien -->
-        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
-        <p>{{.ContenuCourt}}</p>
-        <p>Auteur: {{.Auteur}}</p>
-        <img src="{{.Images.URL}}" alt="Image">
-    </div>
-    <div class="article">
-        <!-- Utiliser l'ID dans le lien -->
-        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
-        <p>{{.ContenuCourt}}</p>
-        <p>Auteur: {{.Auteur}}</p>
-        <img src="{{.Images.URL}}" alt="Image">
-    </div>
-    <div class="article">
-        <!-- Utiliser l'ID dans le lien -->
-        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
-        <p>{{.ContenuCourt}}</p>
-        <p>Auteur: {{.Auteur}}</p>
-        <img src="{{.Images.URL}}" alt="Image">
-    </div>
-    <div class="article">
-        <!-- Utiliser l'ID dans le lien -->
-        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
-        <p>{{.ContenuCourt}}</p>
-        <p>Auteur: {{.Auteur}}</p>
-        <img src="{{.Images.URL}}" alt="Image">
-    </div>
-    <div class="article">
-        <!-- Utiliser l'ID dans le lien -->
-        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
-        <p>{{.ContenuCourt}}</p>
-        <p>Auteur: {{.Auteur}}</p>
-        <img src="{{.Images.URL}}" alt="Image">
-    </div>
-    <div class="article">
-        <!-- Utiliser l'ID dans le lien -->
-        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
-        <p>{{.ContenuCourt}}</p>
-        <p>Auteur: {{.Auteur}}</p>
-        <img src="{{.Images.URL}}" alt="Image">
-    </div>
-    <div class="article">
-        <!-- Utiliser l'ID dans le lien -->
-        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
-        <p>{{.ContenuCourt}}</p>
-        <p>Auteur: {{.Auteur}}</p>
-        <img src="{{.Images.URL}}" alt="Image">
-    </div>
-    <div class="article">
-        <!-- Utiliser l'ID dans le lien -->
-        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
-        <p>{{.ContenuCourt}}</p>
-        <p>Auteur: {{.Auteur}}</p>
-        <img src="{{.Images.URL}}" alt="Image">
-    </div>
-    <div class="article">
-        <!-- Utiliser l'ID dans le lien -->
-        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
-        <p>{{.ContenuCourt}}</p>
-        <p>Auteur: {{.Auteur}}</p>
-        <img src="{{.Images.URL}}" alt="Image">
-    </div>
-    <div class="article">
-        <!-- Utiliser l'ID dans le lien -->
-        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
-        <p>{{.ContenuCourt}}</p>
+    <div>
+      
+        <a href="/article/{{.ID}}">{{.Titre}}</a>
+<p>{{.ContenuCourt}}</p>
         <p>Auteur: {{.Auteur}}</p>
         <img src="{{.Images.URL}}" alt="Image">
     </div>
@@ -122,6 +56,5 @@
         </div>
     </footer>
 </body>
-
 </html>
 {{end}}

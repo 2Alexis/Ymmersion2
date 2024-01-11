@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"html/template"
+	"math/rand"
 	"net/http"
 	"os"
 	"strconv"
@@ -107,17 +108,41 @@ func writeJSON(filePath string, blog Blog) error {
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	categorie := r.URL.Query().Get("category")
 
+	var articlesToDisplay []Article
+
 	if categorie == "" {
-		templates.ExecuteTemplate(w, "index.html", blog.Articles)
+		// If no category specified, select 10 random articles from the blog
+		articlesToDisplay = getRandomArticles(blog.Articles, 10)
 	} else {
+		// If category specified, filter articles by category
 		var filteredArticles []Article
 		for _, article := range blog.Articles {
 			if strings.ToLower(article.Categorie) == strings.ToLower(categorie) {
 				filteredArticles = append(filteredArticles, article)
 			}
 		}
-		templates.ExecuteTemplate(w, "index.html", filteredArticles)
+		// Select 10 random articles from the filtered list
+		articlesToDisplay = getRandomArticles(filteredArticles, 10)
 	}
+
+	templates.ExecuteTemplate(w, "index.html", articlesToDisplay)
+}
+
+// Function to get n random articles from a given list
+func getRandomArticles(articles []Article, n int) []Article {
+	if n >= len(articles) {
+		return articles
+	}
+
+	// Shuffle the articles randomly
+	shuffledArticles := make([]Article, len(articles))
+	perm := rand.Perm(len(articles))
+	for i, randIndex := range perm {
+		shuffledArticles[i] = articles[randIndex]
+	}
+
+	// Select the first n articles from the shuffled list
+	return shuffledArticles[:n]
 }
 
 func category1Handler(w http.ResponseWriter, r *http.Request) {
