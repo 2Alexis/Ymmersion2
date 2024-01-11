@@ -6,6 +6,28 @@
     <title>Accueil</title>
     <meta name="viewport" content="" width=device-width, initial-scale="1.0">
     <link rel="stylesheet" href="1accueil.css">
+    <title>Barre de Recherche</title>
+    <style>
+        /* Style optionnel pour rendre la barre de recherche plus esthétique */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,6 +49,12 @@
             <a href="/templates/4recherche.html" style="color:whitesmoke;"> Recherche</a>
         </div>
     </header>
+    <h2>Barre de Recherche</h2>
+
+    <form action="/rechercher" method="get">
+        <input type="text" name="q" placeholder="Rechercher...">
+        <input type="submit" value="Rechercher">
+    </form>
     <div class="ligne">
         <div class="vignette">
             <img src="lien vers l'image de l'article" alt="image de l'article" width="400" height="250" />
