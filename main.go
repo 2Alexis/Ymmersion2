@@ -10,9 +10,13 @@ import (
 	"strings"
 )
 
-var templates = template.Must(template.ParseFiles("templates/1accueil.html", "templates/3article.html"))
+var templates = template.Must(template.ParseFiles("templates/index.html", "templates/article.html", "templates/category1.html", "templates/category2.html", "templates/category3.html"))
 
 var blog Blog
+
+func (a *Article) URL() template.URL {
+	return template.URL(fmt.Sprintf("/%s/article/%d", strings.ToLower(a.Categorie), a.ID))
+}
 
 func main() {
 	loadedBlog, err := readJSON("articles.json")
@@ -23,24 +27,29 @@ func main() {
 
 	blog = loadedBlog
 
-	// Configuration des gestionnaires de routage
-	http.HandleFunc("/1accueil", indexHandler)
-	http.HandleFunc("/3article", articleHandler)
-	http.HandleFunc("/2categorie", categoriesHandler)
-	http.HandleFunc("/4recherche", searchHandler)
-	http.HandleFunc("/5administration", adminHandler)
-	http.HandleFunc("/6ajout", addArticleHandler)
+	http.HandleFunc("/", indexHandler)
+	http.HandleFunc("/category1/", category1Handler)
+	http.HandleFunc("/category2/", category2Handler)
+	http.HandleFunc("/category3/", category3Handler) // Ajout du gestionnaire de catégorie
+	http.HandleFunc("/article/", articleHandler)
+	http.HandleFunc("/search/", searchHandler)
+
+	http.HandleFunc("/admin/", adminHandler)
+	http.HandleFunc("/admin/add/", addArticleHandler)
+	http.HandleFunc("/admin/delete/", deleteArticleHandler)
 
 	// Démarrez le serveur web
 	http.ListenAndServe(":8080", nil)
 }
 
 type Article struct {
-	ID        int    `json:"id"`
-	Categorie string `json:"categorie"`
-	Titre     string `json:"titre"`
-	Contenu   string `json:"contenu"`
-	Images    Image  `json:"images"`
+	ID           int    `json:"id"`
+	Categorie    string `json:"categorie"`
+	Titre        string `json:"titre"`
+	Auteur       string `json:"auteur"`
+	Contenu      string `json:"contenu"`
+	Images       Image  `json:"images"`
+	ContenuCourt string
 }
 
 type Image struct {
@@ -66,6 +75,16 @@ func readJSON(filePath string) (Blog, error) {
 		return Blog{}, fmt.Errorf("erreur lors du décodage du fichier JSON: %v", err)
 	}
 
+	// Ajouter le début du contenu
+	for i := range blog.Articles {
+		const maxContentLength = 300
+		if len(blog.Articles[i].Contenu) > maxContentLength {
+			blog.Articles[i].ContenuCourt = blog.Articles[i].Contenu[:maxContentLength] + "..."
+		} else {
+			blog.Articles[i].ContenuCourt = blog.Articles[i].Contenu
+		}
+	}
+
 	return blog, nil
 }
 
@@ -83,10 +102,10 @@ func writeJSON(filePath string, blog Blog) error {
 	return encoder.Encode(blog)
 }
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-	categorie := r.URL.Query().Get("categorie")
+	categorie := r.URL.Query().Get("category")
 
 	if categorie == "" {
-		templates.ExecuteTemplate(w, "1accueil.html", blog.Articles)
+		templates.ExecuteTemplate(w, "index.html", blog.Articles)
 	} else {
 		var filteredArticles []Article
 		for _, article := range blog.Articles {
@@ -94,15 +113,38 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 				filteredArticles = append(filteredArticles, article)
 			}
 		}
-		templates.ExecuteTemplate(w, "1accueil.html", filteredArticles)
+		templates.ExecuteTemplate(w, "index.html", filteredArticles)
 	}
 }
 
-// Gestionnaire pour la page des catégories
-func categoriesHandler(w http.ResponseWriter, r *http.Request) {
-	templates.ExecuteTemplate(w, "2categorie.html", blog.Articles)
+func category1Handler(w http.ResponseWriter, r *http.Request) {
+	// Récupérer les articles de la catégorie 1
+	categoryArticles := getArticlesByCategory("TOPS 10")
+	templates.ExecuteTemplate(w, "category1.html", categoryArticles)
 }
 
+func category2Handler(w http.ResponseWriter, r *http.Request) {
+	// Récupérer les articles de la catégorie 2
+	categoryArticles := getArticlesByCategory("Tutoriels")
+	templates.ExecuteTemplate(w, "category2.html", categoryArticles)
+}
+
+func category3Handler(w http.ResponseWriter, r *http.Request) {
+	// Récupérer les articles de la catégorie 3
+	categoryArticles := getArticlesByCategory("Nouveautes")
+	templates.ExecuteTemplate(w, "category3.html", categoryArticles)
+}
+
+// Fonction utilitaire pour récupérer les articles d'une catégorie spécifique
+func getArticlesByCategory(category string) []Article {
+	var categoryArticles []Article
+	for _, article := range blog.Articles {
+		if strings.ToLower(article.Categorie) == strings.ToLower(category) {
+			categoryArticles = append(categoryArticles, article)
+		}
+	}
+	return categoryArticles
+}
 func articleHandler(w http.ResponseWriter, r *http.Request) {
 	// Extraire l'ID de l'article de l'URL
 	id := strings.TrimPrefix(r.URL.Path, "/article/")
@@ -128,20 +170,20 @@ func articleHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Exécuter le template spécifique pour l'article
-	templates.ExecuteTemplate(w, "3article.html", foundArticle)
+	templates.ExecuteTemplate(w, "article.html", foundArticle)
 }
 
 // Gestionnaire pour la recherche
 func searchHandler(w http.ResponseWriter, r *http.Request) {
 	// Extraire le terme de recherche de l'URL
-	term := strings.TrimPrefix(r.URL.Path, "/search/")
+	term := r.URL.Query().Get("term")
 	var results []Article
 	for _, article := range blog.Articles {
 		if strings.Contains(strings.ToLower(article.Titre), strings.ToLower(term)) {
 			results = append(results, article)
 		}
 	}
-	templates.ExecuteTemplate(w, "1accueil.html", results)
+	templates.ExecuteTemplate(w, "search.html", results)
 }
 
 // Gestionnaire pour la partie administration
