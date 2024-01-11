@@ -70,6 +70,12 @@ h2::first-letter {
     width: 30%;
 }
 
+.formulaireajout{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
 footer {
     display: flex;
     flex-direction: row;
