@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-var templates = template.Must(template.ParseFiles("templates/index.html", "templates/article.html", "templates/category1.html", "templates/category2.html", "templates/category3.html"))
+var templates = template.Must(template.ParseFiles("templates/index.html", "templates/article.html", "templates/category1.html", "templates/category2.html", "templates/category3.html", "templates/ajout.html"))
 
 var blog Blog
 
@@ -26,6 +26,9 @@ func main() {
 	}
 
 	blog = loadedBlog
+
+	// Gère la route "/static/" pour servir des fichiers statiques depuis le dossier "static"
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/category1/", category1Handler)

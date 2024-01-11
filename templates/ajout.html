@@ -1,13 +1,15 @@
-{{define "index.html"}}
+{{define "ajout.html"}}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveautés</title>
     <link rel="stylesheet" href="../static/1accueil.css">
-    <title>Article</title>
 </head>
+
 <body>
     <header>
         <div class="en-tête">
@@ -32,17 +34,34 @@
             </form>
         </div>
     </header>
+    <h1>Ajoutez votre article</h1>
+    <form id="articleForm" class="formulaireajout">
 
+        <label for="categorie">Catégorie de l'article</label>
+        <input type="text" id="categorie" name="categorie" required>
 
+        <label for="title">Titre de l'article:</label>
+        <input type="text" id="title" name="title" required>
 
-    <h1>{{.Categorie}}</h1>
-    <h2>{{.Titre}}</h2>
-    <p><strong>Auteur:</strong> {{.Auteur}}</p>
-    <img src="{{.Images.URL}}" alt="Image de l'article">
-    <p>{{.Contenu}}</p>
+        <label for="auteur">Auteur de l'article:</label>
+        <input type="text" id="auteur" name="auteur" required>
 
+        <label for="content">Contenu de l'article:</label>
+        <textarea id="content" name="content" rows="8" required></textarea>
 
+        <label for="image">Image de l'article:</label>
+        <input type="file" id="image" name="image" accept="image/*">
 
+        <button type="submit">Ajouter l'article</button>
+    </form>
+
+    <script>
+        document.getElementById('articleForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Ajoutez ici le code pour envoyer les données du formulaire à votre serveur
+            // par exemple, en utilisant fetch() ou une autre méthode.
+        });
+    </script>
 
     <footer>
         <div class="concepteurs">
@@ -58,5 +77,6 @@
         </div>
     </footer>
 </body>
+
 </html>
 {{end}}
