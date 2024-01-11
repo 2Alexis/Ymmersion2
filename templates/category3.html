@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nouveautés</title>
-    <link rel="stylesheet" href="1accueil.css">
+    <link rel="stylesheet" href="../static/1accueil.css">
 </head>
 
 <body>
     <header>
         <div class="en-tête">
-            <div>
-                <img class="logo" src="image/LogoActiveSports.png" alt="Logo du blog" width="124" height="124">
+            <div><a href="/templates/index.html">
+                <img src="../static/image/LogoActiveSports.png" alt="Logo du blog" width="124" height="124"></a>
             </div>
             <div class="nom">
                 <h1> ActiveSports </h1>
@@ -24,17 +24,14 @@
             </div>
         </div>
         <div class="menu">
-            <a href="/templates/category1.html" style="color:whitesmoke;"> Tops 10</a>
-            <a href="/templates/category2.html" style="color:whitesmoke;"> Tutoriels</a>
-            <a href="/templates/category3.html" style="color:whitesmoke;"> Nouveautes</a>
-            <form action="/" method="GET">
+            <a href="/templates/category1.html" style="color: black;"> Tops 10</a>
+            <a href="/templates/category2.html" style="color: black;"> Tutoriels</a>
+            <a href="/templates/category3.html" style="color: black;"> Nouveautes</a>
+            <form class="recherche" action="/" method="GET">
                 <label for="search">Rechercher un article:</label>
                 <input type="text" id="search" name="term" placeholder="Entrez le titre">
                 <button type="submit">Rechercher</button>
             </form>
-            {{if .Results}}
-            <h2>Résultats de la recherche :</h2>
-            {{range .Results}}
         </div>
     </header>
     <h1>Nouveautés</h1>
@@ -119,9 +116,9 @@
             <h6> TICHIT Johan</h6>
         </div>
         <div class="informations">
-            <a href="/templates/8ymmersion2.html" style="color:whitesmoke;"> Ymmersion 2</a>
-            <a href="/templates/9contact.html" style="color:whitesmoke;"> Contact</a>
-            <a href="/templates/10mentionslegales.html" style="color:whitesmoke;"> Mentions Légales</a>
+            <a href="/templates/8ymmersion2.html" style="color:black;"> Ymmersion 2</a>
+            <a href="/templates/9contact.html" style="color:black;"> Contact</a>
+            <a href="/templates/10mentionslegales.html" style="color:black;"> Mentions Légales</a>
         </div>
     </footer>
 </body>

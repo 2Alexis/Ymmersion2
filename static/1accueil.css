@@ -28,6 +28,11 @@ div {
     box-sizing: border-box;
 }
 
+.recherche {
+    margin: 0;
+
+}
+
 .nom {
     display: flex;
     align-items: center;
@@ -76,7 +81,9 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    color: whitesmoke
+    color: black;
+    margin: 10px;
+    
 }
 
 
@@ -87,6 +94,9 @@ footer {
     width: 30%;
 }
 
+h6 {
+    margin: 10px;
+}
 
 a:link {
     text-decoration: none;

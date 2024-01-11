@@ -27,6 +27,9 @@ func main() {
 
 	blog = loadedBlog
 
+	// Gère la route "/static/" pour servir des fichiers statiques depuis le dossier "static"
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/category1/", category1Handler)
 	http.HandleFunc("/category2/", category2Handler)
