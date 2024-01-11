@@ -23,7 +23,6 @@ func main() {
 
 	blog = loadedBlog
 
-	// Configuration des gestionnaires de routage
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/article/", articleHandler)
 	http.HandleFunc("/categories", categoriesHandler)

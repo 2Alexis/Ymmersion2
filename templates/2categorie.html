@@ -1,4 +1,4 @@
-{{ define "index.html" }}
+{{ define "2categorie.html" }}
 <!DOCTYPE html>
 <html>
 
@@ -19,14 +19,19 @@
                 <h1> ActiveSports </h1>
             </div>
             <div class="nom2">
-                <h2> Où la passion du sport prend vie. </h2>
+                <h2> TOù la passion du sport prend vie. </h2>
             </div>
         </div>
+        <ul>
+            {{ range . }}
+                <li><a href="/categorie={{ .Categorie }}">{{ .Categorie }}</a></li>
+            {{ end }}
+        </ul>
         <div class="menu">
-            <a href="https://www.google.fr/" style="color:whitesmoke;"> Tops 10</a>       <!-- mettre les lien des pages quand elles seront créées --> 
-            <a href="https://www.google.fr/" style="color:whitesmoke;"> Tutoriels</a>       <!-- mettre les lien des pages quand elles seront créées -->          
-            <a href="https://www.google.fr/" style="color:whitesmoke;"> Nouveautes</a>       <!-- mettre les lien des pages quand elles seront créées --> 
-            <a href="https://www.google.fr/" style="color:whitesmoke;"> Recherche</a>       <!-- mettre les lien des pages quand elles seront créées --> 
+            <a href="https://www.google.fr/" style="color:black;"> Tops 10</a>       <!-- mettre les lien des pages quand elles seront créées --> 
+            <a href="https://www.google.fr/" style="color:black;"> Tutoriels</a>       <!-- mettre les lien des pages quand elles seront créées -->          
+            <a href="https://www.google.fr/" style="color:black;"> Nouveautes</a>       <!-- mettre les lien des pages quand elles seront créées --> 
+            <a href="https://www.google.fr/" style="color:black;"> Recherche</a>       <!-- mettre les lien des pages quand elles seront créées --> 
         </div>
     </header>
 
