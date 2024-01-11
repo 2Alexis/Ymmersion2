@@ -37,7 +37,8 @@
         "categorie": "Tops 10",
         "titre": "LES 10 MEILLEURS JOUEURS DE LA LNH (2023)",
         "auteur": "Equipe-France.fr",
-        "contenu": "1	Arthur Thieffry\n2 Étienne Tynevez\n3 Gaspard Xavier\n4 Simon Martin-Brisac\n5 Brieuc Delemazure\n6 Viktor Lockwood\n7 Charles Masson\n8 Edgar Reynaud\n9 François Goyet\n10 Noé Jouin",
+        "contenu": "1. Arthur Thieffry
+        Arthur Thieffry, en tête de ce classement, est une étoile montante du tennis. Originaire de France, sa technique exceptionnelle et son mental fort ont déjà attiré l'attention des amateurs de tennis. Ayant remporté plusieurs tournois juniors, Thieffry se profile comme un futur champion.\n2 Étienne Tynevez\n3 Gaspard Xavier\n4 Simon Martin-Brisac\n5 Brieuc Delemazure\n6 Viktor Lockwood\n7 Charles Masson\n8 Edgar Reynaud\n9 François Goyet\n10 Noé Jouin",
         "images": {"url": "image1.jpg"}
       },
       {
@@ -53,7 +54,7 @@
         "categorie": "Tops 10",
         "titre": "TOP joueurs de volley-ball",
         "auteur": "volleybox.net",
-        "contenu": "1	Wilfredo Leon Réceptionneur-attaquant de Pologne\n2 Maksim Mikhaylov Pointu de Russie\n3 Sergio Dutra Santos Libéro de Brésil\n4 Osmany Juantorena Réceptionneur-attaquant de Italie\n5 Ivan Miljković Pointu de Serbie\n6 Robertlandy Simon Aties Central de Cuba\n7 Wallace de Souza Pointu de Brésil\n8 Dmitriy Muserskiy Pointu de Russie\n9 Bruno Rezende Passeur de Brésil\n10 Matey Kaziyski Réceptionneur-attaquant de Bulgarie",
+        "contenu": "1) Wilfredo Leon Réceptionneur-attaquant de Pologne\n2) Maksim Mikhaylov Pointu de Russie\n3) Sergio Dutra Santos Libéro de Brésil\n4) Osmany Juantorena Réceptionneur-attaquant de Italie\n5) Ivan Miljković Pointu de Serbie\n6 Robertlandy Simon Aties Central de Cuba\n7 Wallace de Souza Pointu de Brésil\n8 Dmitriy Muserskiy Pointu de Russie\n9 Bruno Rezende Passeur de Brésil\n10 Matey Kaziyski Réceptionneur-attaquant de Bulgarie",
         "images": {"url": "image1.jpg"}
       },
       {
@@ -61,7 +62,7 @@
         "categorie": "Tops 10",
         "titre": "Le classement mondial ITTF hommes au 9 janvier 2024",
         "auteur": "olympics.com",
-        "contenu": "1 FAN Zhendong (République populaire de Chine)\n2 WANG Chuqin (République populaire de Chine)\n3 MA Long (République populaire de Chine)\n4 LIANG Jingkun (République populaire de Chine)\n5 Hugo CALDERANO (Brésil)\n6 LIN Gaoyuan (République populaire de Chine)\n7 LIN Yun-Ju (Chinese Taipei)\n8 Félix LEBRUN (France)\n9 Dang QIU (Allemagne)\n10 HARIMOTO Tomokazu (Japon)",
+        "contenu": "1) FAN Zhendong (République populaire de Chine)\n2) WANG Chuqin (République populaire de Chine)\n3 MA Long (République populaire de Chine)\n4) LIANG Jingkun (République populaire de Chine)\n5) Hugo CALDERANO (Brésil)\n6) LIN Gaoyuan (République populaire de Chine)\n7) LIN Yun-Ju (Chinese Taipei)\n8) Félix LEBRUN (France)\n9) Dang QIU (Allemagne)\n10) HARIMOTO Tomokazu (Japon)",
         "images": {"url": "image1.jpg"}
       },
       {
@@ -69,7 +70,7 @@
         "categorie": "Tops 10",
         "titre": "Le Club des 500 circuits",
         "auteur": "Wikipédia",
-        "contenu": "1Barry Bonds\n2	Hank Aaron\n3	Babe Ruth\n4	Albert Pujols\n5	Alex Rodriguez\n6	Willie Mays\n7	Ken Griffey\n8	Jim Thome\n9	Sammy Sosa\n10	Frank Robinson",
+        "contenu": "1)Barry Bonds\n2)	Hank Aaron\n3)	Babe Ruth\n4)	Albert Pujols\n5)	Alex Rodriguez\n6	Willie Mays\n7)	Ken Griffey\n8)	Jim Thome\n9)	Sammy Sosa\n10)	Frank Robinson",
         "images": {"url": "image1.jpg"}
       },
       {
@@ -77,7 +78,7 @@
         "categorie": "Tops 10",
         "titre": "Le Top 100 NFL 2022",
         "auteur": "touchdownactu",
-        "contenu": "1 Tom Brady, QB, Buccaneers\n2 Aaron Donald, DT, Rams\n3 Aaron Rodgers, QB, Packers\n4 Cooper Kupp, WR, Rams\n5 Jonathan Taylor, RB, Colts\n6 T.J. Watt, LB, Steelers\n7 Davante Adams, WR, Raiders\n8 Patrick Mahomes II, QB, Chiefs\n9 Jalen Ramsey, CB, Rams\n10 Travis Kelce, TE, Chiefs",
+        "contenu": "1) Tom Brady, QB, Buccaneers\n2) Aaron Donald, DT, Rams\n3) Aaron Rodgers, QB, Packers\n4) Cooper Kupp, WR, Rams\n5) Jonathan Taylor, RB, Colts\n6) T.J. Watt, LB, Steelers\n7) Davante Adams, WR, Raiders\n8) Patrick Mahomes II, QB, Chiefs\n9) Jalen Ramsey, CB, Rams\n10) Travis Kelce, TE, Chiefs",
         "images": {"url": "image1.jpg"}
       },
       {
@@ -91,81 +92,81 @@
       {
         "id" : 11,
         "categorie": "Tutoriels",
-        "titre": "Teamfight Tactics",
-        "auteur": "Riot Games",
-        "contenu": "...",
+        "titre": "Guide du Débutant : Comment Commencer la Course à Pied",
+        "auteur": "chat GPT",
+        "contenu": "Développement : Présentez des conseils détaillés pour choisir des chaussures de course appropriées, un programme d'entraînement progressif pour les débutants, et donnez des conseils sur la respiration et la posture pendant la course.",
         "images": {"url": "image1.jpg"}
       },
       {
         "id" : 12,
         "categorie": "Tutoriels",
-        "titre": "Teamfight Tactics",
-        "auteur": "Riot Games",
-        "contenu": "...",
+        "titre": "Entraînement à la Maison : Circuit HIIT pour la Perte de Poids",
+        "auteur": "chat GPT",
+        "contenu": "Développement : Proposez un plan d'entraînement HIIT avec des exercices spécifiques pour cibler différentes zones du corps. Incluez des conseils sur la motivation à domicile, des alternatives d'équipement et des directives de sécurité.",
         "images": {"url": "image1.jpg"}
       },
       {
         "id" : 13,
         "categorie": "Tutoriels",
-        "titre": "Teamfight Tactics",
-        "auteur": "Riot Games",
-        "contenu": "...",
+        "titre": "Yoga pour les Sportifs : Les Meilleures Postures pour la Flexibilité",
+        "auteur": "chat GPT",
+        "contenu": "Développement : Détaillez des postures de yoga bénéfiques pour les athlètes, en mettant l'accent sur les étirements spécifiques pour améliorer la flexibilité. Expliquez comment intégrer le yoga dans un programme d'entraînement et ses avantages.",
         "images": {"url": "image1.jpg"}
       },
       {
         "id" : 14,
         "categorie": "Tutoriels",
-        "titre": "Teamfight Tactics",
-        "auteur": "Riot Games",
-        "contenu": "...",
+        "titre": "Construire une Routine d'Entraînement Matinal : Avantages et Conseils",
+        "auteur": "chat GPT",
+        "contenu": "Développement : Explorez les avantages de l'entraînement matinal, fournissez des idées d'exercices adaptés au matin et offrez des conseils pour maintenir une routine d'entraînement matinale cohérente.",
         "images": {"url": "image1.jpg"}
       },
       {
         "id" : 15,
         "categorie": "Tutoriels",
-        "titre": "Teamfight Tactics",
-        "auteur": "Riot Games",
-        "contenu": "...",
+        "titre": "Nutrition Pré-Entraînement : Quoi Manger Avant l'Effort",
+        "auteur": "chat GPT",
+        "contenu": "Développement : Donnez des informations sur les aliments énergétiques, le timing optimal pour les repas pré-entraînement, et recommandez des boissons hydratantes et des collations appropriées pour maximiser les performances.",
         "images": {"url": "image1.jpg"}
       },
       {
         "id" : 16,
         "categorie": "Tutoriels",
-        "titre": "Teamfight Tactics",
-        "auteur": "Riot Games",
-        "contenu": "...",
+        "titre": "Guide du Stretching : Les Meilleures Techniques pour Éviter les Blessures",
+        "auteur": "chat GPT",
+        "contenu": "Développement : Expliquez l'importance du stretching dans la prévention des blessures, détaillez des techniques de stretching pour différentes activités sportives et proposez une fréquence idéale pour le stretching dans une routine d'entraînement.",
         "images": {"url": "image1.jpg"}
       },
       {
         "id" : 17,
         "categorie": "Tutoriels",
-        "titre": "Teamfight Tactics",
-        "auteur": "Riot Games",
-        "contenu": "...",
+        "titre": "Entraînement en Circuit pour la Force et l'Endurance",
+        "auteur": "chat GPT",
+        "contenu": "Développement : Élaborez sur un plan d'entraînement en circuit visant à améliorer la force et l'endurance. Incluez des conseils sur l'utilisation efficace du poids corporel et d'équipements simples, ainsi que les avantages globaux de ce type d'entraînement.",
         "images": {"url": "image1.jpg"}
       },
       {
         "id" : 18,
         "categorie": "Tutoriels",
-        "titre": "Teamfight Tactics",
-        "auteur": "Riot Games",
-        "contenu": "...",
+        "titre": "Méditation et Sport : Comment la Pleine Conscience Améliore les Performances",
+        "auteur": "chat GPT",
+        "contenu": "Développement : Détaillez des techniques de méditation adaptées aux athlètes, et expliquez comment la pleine conscience peut améliorer la concentration et les performances sportives. Guidez les lecteurs sur l'intégration de la méditation dans leur routine sportive.",
         "images": {"url": "image1.jpg"}
       },
       {
         "id" : 19,
         "categorie": "Tutoriels",
-        "titre": "Teamfight Tactics",
-        "auteur": "Riot Games",
-        "contenu": "...",
+        "titre": "Conseils pour les Coureurs : Éviter les Blessures et Améliorer la Récupération",
+        "auteur": "chat GPT",
+        "contenu": "Développement : Fournissez des conseils spécifiques sur les échauffements pour les coureurs, des exercices de renforcement musculaire et des stratégies de récupération post-course pour minimiser les risques de blessures.",
         "images": {"url": "image1.jpg"}
       },
       {
         "id" : 20,
         "categorie": "Tutoriels",
-        "titre": "Teamfight Tactics",
-        "auteur": "Riot Games",
-        "contenu": "...",
+        "titre": "Entraînement en Plein Air : Comment Tirer Parti de la Nature",
+        "auteur": "chat GPT",
+        "contenu": "Développement : Mettez en avant les avantages physiques et mentaux de l'entraînement en plein air. Proposez des activités sportives adaptées à différents environnements naturels et donnez des conseils pour rester en sécurité et apprécier l'exercice en plein air.",
         "images": {"url": "image1.jpg"}
       },
       {

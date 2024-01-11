@@ -1,16 +1,109 @@
 {{define "category1.html"}}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Catégorie 1</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tops 10</title>
+    <link rel="stylesheet" href="1accueil.css">
 </head>
+
 <body>
-    <h1>Catégorie 1</h1>
+    <header>
+        <div class="en-tête">
+            <div>
+                <img class="logo" src="image/LogoActiveSports.png" alt="Logo du blog" width="124" height="124">
+            </div>
+            <div class="nom">
+                <h1> ActiveSports </h1>
+            </div>
+            <div class="nom2">
+                <h2> Où la passion du sport prend vie. </h2>
+            </div>
+        </div>
+        <div class="menu">
+            <a href="/templates/category1.html" style="color:whitesmoke;"> Tops 10</a>
+            <a href="/templates/category2.html" style="color:whitesmoke;"> Tutoriels</a>
+            <a href="/templates/category3.html" style="color:whitesmoke;"> Nouveautes</a>
+            <form action="/" method="GET">
+                <label for="search">Rechercher un article:</label>
+                <input type="text" id="search" name="term" placeholder="Entrez le titre">
+                <button type="submit">Rechercher</button>
+            </form>
+            {{if .Results}}
+            <h2>Résultats de la recherche :</h2>
+            {{range .Results}}
+        </div>
+    </header>
+    <h1>Les tops 10</h1>
     {{range .}}
-    <div>
+    <div class="liste article"></div>
+    <div class="article">
+        <!-- Utiliser l'ID dans le lien -->
+        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
+        <p>{{.ContenuCourt}}</p>
+        <p>Auteur: {{.Auteur}}</p>
+        <img src="{{.Images.URL}}" alt="Image">
+    </div>
+    <div class="article">
+        <!-- Utiliser l'ID dans le lien -->
+        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
+        <p>{{.ContenuCourt}}</p>
+        <p>Auteur: {{.Auteur}}</p>
+        <img src="{{.Images.URL}}" alt="Image">
+    </div>
+    <div class="article">
+        <!-- Utiliser l'ID dans le lien -->
+        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
+        <p>{{.ContenuCourt}}</p>
+        <p>Auteur: {{.Auteur}}</p>
+        <img src="{{.Images.URL}}" alt="Image">
+    </div>
+    <div class="article">
+        <!-- Utiliser l'ID dans le lien -->
+        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
+        <p>{{.ContenuCourt}}</p>
+        <p>Auteur: {{.Auteur}}</p>
+        <img src="{{.Images.URL}}" alt="Image">
+    </div>
+    <div class="article">
+        <!-- Utiliser l'ID dans le lien -->
+        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
+        <p>{{.ContenuCourt}}</p>
+        <p>Auteur: {{.Auteur}}</p>
+        <img src="{{.Images.URL}}" alt="Image">
+    </div>
+    <div class="article">
+        <!-- Utiliser l'ID dans le lien -->
+        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
+        <p>{{.ContenuCourt}}</p>
+        <p>Auteur: {{.Auteur}}</p>
+        <img src="{{.Images.URL}}" alt="Image">
+    </div>
+    <div class="article">
+        <!-- Utiliser l'ID dans le lien -->
+        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
+        <p>{{.ContenuCourt}}</p>
+        <p>Auteur: {{.Auteur}}</p>
+        <img src="{{.Images.URL}}" alt="Image">
+    </div>
+    <div class="article">
+        <!-- Utiliser l'ID dans le lien -->
+        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
+        <p>{{.ContenuCourt}}</p>
+        <p>Auteur: {{.Auteur}}</p>
+        <img src="{{.Images.URL}}" alt="Image">
+    </div>
+    <div class="article">
+        <!-- Utiliser l'ID dans le lien -->
+        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
+        <p>{{.ContenuCourt}}</p>
+        <p>Auteur: {{.Auteur}}</p>
+        <img src="{{.Images.URL}}" alt="Image">
+    </div>
+    <div class="article">
         <!-- Utiliser l'ID dans le lien -->
         <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
         <p>{{.ContenuCourt}}</p>
@@ -18,6 +111,20 @@
         <img src="{{.Images.URL}}" alt="Image">
     </div>
     {{end}}
+    <footer>
+        <div class="concepteurs">
+            <h6> SIARY MAUREL Louka</h6>
+            <h6> FELLAH Adem</h6>
+            <h6> CLERC Alexis</h6>
+            <h6> TICHIT Johan</h6>
+        </div>
+        <div class="informations">
+            <a href="/templates/8ymmersion2.html" style="color:whitesmoke;"> Ymmersion 2</a>
+            <a href="/templates/9contact.html" style="color:whitesmoke;"> Contact</a>
+            <a href="/templates/10mentionslegales.html" style="color:whitesmoke;"> Mentions Légales</a>
+        </div>
+    </footer>
 </body>
+
 </html>
 {{end}}
