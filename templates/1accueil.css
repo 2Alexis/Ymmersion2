@@ -53,6 +53,18 @@ h2::first-letter {
 
 }
 
+.ligne{
+    display: flex;
+    flex-direction: row;
+   justify-content: space-evenly;
+    width: 1465px;
+}
+.vignette{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
 footer {
     display: flex;
     flex-direction: row;

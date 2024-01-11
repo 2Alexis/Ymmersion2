@@ -1,0 +1,23 @@
+{{define "category1.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Catégorie 1</title>
+</head>
+<body>
+    <h1>Catégorie 1</h1>
+    {{range .}}
+    <div>
+        <!-- Utiliser l'ID dans le lien -->
+        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
+        <p>{{.ContenuCourt}}</p>
+        <p>Auteur: {{.Auteur}}</p>
+        <img src="{{.Images.URL}}" alt="Image">
+    </div>
+    {{end}}
+</body>
+</html>
+{{end}}
