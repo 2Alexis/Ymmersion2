@@ -40,6 +40,11 @@ div {
     text-decoration-color: rgb(76, 0, 255);
 }
 
+.erreur404{
+    margin-bottom: 50px;
+
+}
+
 h1::first-letter {
     font-size: 50px;
     color: rgb(76, 0, 255);
@@ -68,6 +73,12 @@ h2::first-letter {
     display: flex;
     flex-direction: column;
     width: 30%;
+}
+
+.formulaireajout{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
 }
 
 footer {
