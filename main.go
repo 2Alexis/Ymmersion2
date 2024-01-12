@@ -11,7 +11,7 @@ import (
 	"strings"
 )
 
-var templates = template.Must(template.ParseFiles("templates/index.html", "templates/article.html", "templates/category1.html", "templates/category2.html", "templates/category3.html", "templates/ajout.html"))
+var templates = template.Must(template.ParseFiles("templates/index.html", "templates/article.html", "templates/category1.html", "templates/category2.html", "templates/category3.html", "templates/ajout.html", "templates/login.html", "templates/admin.html"))
 
 var blog Blog
 
@@ -37,8 +37,9 @@ func main() {
 	http.HandleFunc("/category3/", category3Handler) // Ajout du gestionnaire de catégorie
 	http.HandleFunc("/article/", articleHandler)
 	http.HandleFunc("/search/", searchHandler)
+	http.HandleFunc("/login/", loginHandler)
+	http.Handle("/admin/", adminMiddleware(http.HandlerFunc(adminHandler)))
 
-	http.HandleFunc("/admin/", adminHandler)
 	http.HandleFunc("/admin/add/", addArticleHandler)
 	http.HandleFunc("/admin/delete/", deleteArticleHandler)
 
@@ -58,6 +59,13 @@ type Article struct {
 
 type Image struct {
 	URL string `json:"url"`
+}
+
+type User struct {
+	Username string `json:"username"`
+	Password string `json:"password"`
+	Admin    bool   `json:"admin"`
+	// other fields
 }
 
 // Blog représente une collection d'articles
@@ -145,6 +153,145 @@ func getRandomArticles(articles []Article, n int) []Article {
 	return shuffledArticles[:n]
 }
 
+func authenticateUser(username, password string) (User, error) {
+	// Load users from a JSON file (replace "users.json" with your actual file path)
+	users, err := loadUsersFromJSON("users.json")
+	if err != nil {
+		return User{}, fmt.Errorf("error loading users: %v", err)
+	}
+
+	// Find the user with the provided username
+	var authenticatedUser User
+	for _, user := range users {
+		if user.Username == username {
+			// Check if the password matches
+			if strings.EqualFold(user.Password, password) {
+				authenticatedUser = user
+				break
+			} else {
+				return User{}, fmt.Errorf("incorrect password for user: %s", username)
+			}
+		}
+	}
+
+	// Check if the user was found
+	if authenticatedUser.Username == "" {
+		return User{}, fmt.Errorf("user not found: %s", username)
+	}
+
+	return authenticatedUser, nil
+}
+func adminHandler(w http.ResponseWriter, r *http.Request) {
+	// Check if the user is authenticated as an admin
+	// Check if the user is authenticated as an admin
+	user, err := authenticateUser(r.FormValue("username"), r.FormValue("password"))
+
+	// Debug print
+	fmt.Printf("Admin Authentication Result - User: %+v, Error: %v\n", user, err)
+
+	if err != nil || !user.Admin {
+		http.Redirect(w, r, "/login/", http.StatusSeeOther)
+		return
+	}
+	// Check the request method
+	switch r.Method {
+	case http.MethodGet:
+		// Display the admin page
+		templates.ExecuteTemplate(w, "admin.html", nil)
+	case http.MethodPost:
+		// Handle form submissions (e.g., add or delete articles)
+		action := r.FormValue("action")
+		if action == "add" {
+			// Handle adding article logic here
+		} else if action == "delete" {
+			// Handle deleting article logic here
+		} else {
+			http.Error(w, "Invalid action", http.StatusBadRequest)
+			return
+		}
+
+		// Redirect or show a success message
+		http.Redirect(w, r, "/admin/", http.StatusSeeOther)
+	default:
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+	}
+}
+func loginHandler(w http.ResponseWriter, r *http.Request) {
+	// Check if the method is GET
+	if r.Method == http.MethodGet {
+		// Display the login form
+		templates.ExecuteTemplate(w, "login.html", nil)
+		return
+	}
+
+	// Check if the method is POST (process the login form)
+	if r.Method == http.MethodPost {
+		// Retrieve form data
+		username := r.FormValue("username")
+		password := r.FormValue("password")
+
+		// Authenticate the user
+		user, err := authenticateUser(username, password)
+		if err != nil {
+			// Authentication failed, redirect to the login page
+			http.Redirect(w, r, "/admin/", http.StatusSeeOther)
+			return
+		}
+
+		// Check if the user is an admin
+		if !user.Admin {
+			// User is not an admin, display an error message
+			templates.ExecuteTemplate(w, "login.html", "Access denied")
+			return
+		}
+
+		// Authentication successful, redirect to the admin page
+		http.Redirect(w, r, "/admin/", http.StatusSeeOther)
+		return
+	}
+}
+func adminMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		// Extract and validate user credentials (for example, from cookies or headers)
+		username := r.FormValue("username")
+		password := r.FormValue("password")
+
+		// Authenticate the user
+		user, err := authenticateUser(username, password)
+		if err != nil {
+			http.Error(w, "Authentication failed", http.StatusUnauthorized)
+			return
+		}
+
+		// Check if the user is an admin
+		if !user.Admin {
+			http.Error(w, "Not authorized", http.StatusForbidden)
+			return
+		}
+
+		// Call the next handler if authenticated and authorized
+		next.ServeHTTP(w, r)
+	})
+}
+
+// Function to load users from a JSON file
+func loadUsersFromJSON(filePath string) ([]User, error) {
+	file, err := os.Open(filePath)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	decoder := json.NewDecoder(file)
+	var users []User
+	err = decoder.Decode(&users)
+	if err != nil {
+		return nil, err
+	}
+
+	return users, nil
+}
+
 func category1Handler(w http.ResponseWriter, r *http.Request) {
 	// Récupérer les articles de la catégorie 1
 	categoryArticles := getArticlesByCategory("TOPS 10")
@@ -212,12 +359,6 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	templates.ExecuteTemplate(w, "search.html", results)
-}
-
-// Gestionnaire pour la partie administration
-func adminHandler(w http.ResponseWriter, r *http.Request) {
-	// Implémenter les fonctionnalités d'administration
-	// ...
 }
 
 // Gestionnaire pour l'ajout d'article
