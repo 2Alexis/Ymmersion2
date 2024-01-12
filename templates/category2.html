@@ -36,10 +36,9 @@
     {{range .}}
     <div>
       
-        <a href="/article/{{.ID}}">{{.Titre}}</a>
-<p>{{.ContenuCourt}}</p>
+        <a href="/article/{{.ID}}"> <img src="../static/image/image{{.ID}}.jpg" alt="Image"><h2>{{.Titre}}</h2></a>
+        <p>{{.ContenuCourt}}</p>
         <p>Auteur: {{.Auteur}}</p>
-        <img src="{{.Images.URL}}" alt="Image">
     </div>
     {{end}}
     <footer>
