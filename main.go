@@ -11,7 +11,7 @@ import (
 	"strings"
 )
 
-var templates = template.Must(template.ParseFiles("templates/index.html", "templates/article.html", "templates/category1.html", "templates/category2.html", "templates/category3.html", "templates/ajout.html", "templates/login.html", "templates/admin.html"))
+var templates = template.Must(template.ParseFiles("templates/index.html", "templates/article.html", "templates/category1.html", "templates/category2.html", "templates/category3.html", "templates/ajout.html", "templates/login.html", "templates/admin.html", "templates/ymmersion2.html", "templates/mentionslegales.html", "templates/contact.html"))
 
 var blog Blog
 
@@ -32,6 +32,9 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
 	http.HandleFunc("/", indexHandler)
+	http.HandleFunc("/ymmersion2/", ymmersion2Handler)
+	http.HandleFunc("/mentionslegales/", mentionsHandler)
+	http.HandleFunc("/contact/", contactHandler)
 	http.HandleFunc("/category1/", category1Handler)
 	http.HandleFunc("/category2/", category2Handler)
 	http.HandleFunc("/category3/", category3Handler) // Ajout du gestionnaire de catégorie
@@ -290,6 +293,20 @@ func loadUsersFromJSON(filePath string) ([]User, error) {
 	}
 
 	return users, nil
+}
+
+func ymmersion2Handler(w http.ResponseWriter, r *http.Request) {
+
+	templates.ExecuteTemplate(w, "ymmersion2.html", r)
+}
+
+func mentionsHandler(w http.ResponseWriter, r *http.Request) {
+
+	templates.ExecuteTemplate(w, "mentionslegales.html", r)
+}
+func contactHandler(w http.ResponseWriter, r *http.Request) {
+
+	templates.ExecuteTemplate(w, "contact.html", r)
 }
 
 func category1Handler(w http.ResponseWriter, r *http.Request) {
