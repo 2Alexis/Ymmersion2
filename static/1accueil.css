@@ -3,19 +3,21 @@ header{
 }
 
 body {
-    background-color: grey;
+    background: url("../static/image/24.pngtree-red-yellow-background-high-res-stock-images-pngtree-image_732379.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 
 .menu{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: rgb(70, 70, 70);
+    background-color: rgba(223, 59, 9, 0.73);
     height: 50px;
+    border-radius: 50px;
 }
 
 div {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: cursive, Geneva, Tahoma, sans-serif;
     color: black;
     text-align: center;
     align-items: center;
@@ -37,7 +39,7 @@ div {
     display: flex;
     align-items: center;
     text-decoration: underline;
-    text-decoration-color: rgb(76, 0, 255);
+    text-decoration-color: black;
 }
 
 .erreur404{
@@ -45,21 +47,25 @@ div {
 
 }
 
+h1{
+    color: black;
+}
+
 h1::first-letter {
     font-size: 50px;
-    color: rgb(76, 0, 255);
+    color:white;
 }
 
 h2::first-letter {
     font-size: 50px;
-    color: rgb(76, 0, 255);
+    color: white;
 }
 
 .nom2 {
     display: flex;
     align-items: center;
     text-decoration: underline;
-    text-decoration-color: rgb(76, 0, 255);
+    text-decoration-color: black;
 
 }
 
@@ -86,8 +92,14 @@ h2::first-letter {
 footer {
     display: flex;
     flex-direction: row;
-    background-color: rgb(70, 70, 70);
+    background-color:   rgba(223, 59, 9, 0.73);
     justify-content: space-between;
+    border-radius: 50px;
+
+}
+
+.range{
+    margin-bottom: 50px;
 }
 
 .concepteurs {
@@ -102,6 +114,8 @@ footer {
     display: flex;
     margin-left: 250px;
     width: 70%;
+    font-family: cursive, Geneva, Tahoma, sans-serif;
+    color: black;
 }
 .mentions {
     display: flex;
@@ -111,12 +125,15 @@ footer {
     margin-bottom: 100px;
 }
 
+.alt {
+    margin-bottom: 50px ;
+}
 
 .informations{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 30%;
+    width: 50%;
 }
 
 h6 {
@@ -125,23 +142,20 @@ h6 {
 
 a:link {
     text-decoration: none;
-    color: whitesmoke;
+    color: black;
 }
 
-@media screen and (max-width: 767px) {
-    .en-tête {
-        flex-direction: column;
-    }
 
-    .conteneur {
-        flex-direction: column;
-    }
-
-    .main {
-        flex-direction: column;
+@media screen and (max-width: 768px) {
+    .ligne, .vignette, .formulaire {
+        width: 100%; /* Ajuster la largeur à 100% pour les écrans plus petits */
     }
 
     .footer {
-        flex-direction: column;
+        flex-direction: column; /* Changer à une disposition en colonne sur des écrans plus petits */
+    }
+
+    .loi, .mentions {
+        width: 100%; /* Ajuster la largeur à 100% pour les écrans plus petits */
     }
 }
