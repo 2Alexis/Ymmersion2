@@ -25,22 +25,21 @@
             <a href="/category1/" > Tops 10</a>
             <a href="/category2/" > Tutoriels</a>
             <a href="/category3/" > Nouveautés</a>
-            <form class="recherche" action="/" method="GET">
-                <label for="search">Rechercher un article:</label>
-                <input type="text" id="search" name="term" placeholder="Entrez le titre">
-                <button type="submit">Rechercher</button>
-            </form>
+           <form class="recherche" action="/search/" method="GET">
+    <label for="search">Rechercher un article:</label>
+    <input type="text" id="search" name="term" placeholder="Entrez le titre">
+    <button type="submit">Rechercher</button>
+</form>
+<a href="/login/">Administration</a>
         </div>
     </header>
     
     <div class="range">
         {{range .}}
-        <!-- Utiliser l'ID dans le lien -->
-        <h2><a href="/article/{{.ID}}">{{.Titre}}</a></h2>
+      
+        <a href="/article/{{.ID}}"> <img src="../static/image/image{{.ID}}.jpg" alt="Image"><h2>{{.Titre}}</h2></a>
         <p>{{.ContenuCourt}}</p>
-        <p>Auteur: {{.Auteur}}</p>
-        <img src="{{.Images.URL}}" alt="Image">
-        {{end}}
+        <p>Auteur: {{.Auteur}}</p>{{end}}
     </div>
     
     <footer>
