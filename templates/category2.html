@@ -35,12 +35,12 @@
     <h1>Tutoriels</h1>
     {{range .}}
     <div>
-      
         <a href="/article/{{.ID}}"> <img src="../static/image/image{{.ID}}.jpg" alt="Image"><h2>{{.Titre}}</h2></a>
         <p>{{.ContenuCourt}}</p>
         <p>Auteur: {{.Auteur}}</p>
     </div>
     {{end}}
+    
     <footer>
         <div class="concepteurs">
             <h6> SIARY MAUREL Louka</h6>
