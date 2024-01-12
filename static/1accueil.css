@@ -99,7 +99,17 @@ footer {
 }
 
 .range{
+    display: flex;
+    flex-flow: column nowrap;
     margin-bottom: 50px;
+    margin-top: 20px;
+    border-top: 5px;
+
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
 }
 
 .concepteurs {
@@ -129,6 +139,11 @@ footer {
     margin-bottom: 50px ;
 }
 
+
+.coprs{
+    display: flex;
+    flex-direction: column;
+}
 .informations{
     display: flex;
     align-items: center;

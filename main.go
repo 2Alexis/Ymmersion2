@@ -32,9 +32,9 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
 	http.HandleFunc("/", indexHandler)
-	http.HandleFunc("/ymmersion2/", ymmersion2Handler)
-	http.HandleFunc("/mentionslegales/", mentionsHandler)
-	http.HandleFunc("/contact/", contactHandler)
+	http.HandleFunc("/ymmersion2", ymmersion2Handler)
+	http.HandleFunc("/mentionslegales", mentionsHandler)
+	http.HandleFunc("/contact", contactHandler)
 	http.HandleFunc("/category1/", category1Handler)
 	http.HandleFunc("/category2/", category2Handler)
 	http.HandleFunc("/category3/", category3Handler) // Ajout du gestionnaire de catégorie

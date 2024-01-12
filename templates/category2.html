@@ -33,13 +33,20 @@
         </div>
     </header>
     <h1>Tutoriels</h1>
-    {{range .}}
-    <div>
-        <a href="/article/{{.ID}}"> <img src="../static/image/image{{.ID}}.jpg" alt="Image"><h2>{{.Titre}}</h2></a>
-        <p>{{.ContenuCourt}}</p>
-        <p>Auteur: {{.Auteur}}</p>
+    <div class="range">
+        {{range .}}
+        <div class="row">
+            <div class="photo article">
+                <a href="/article/{{.ID}}"> <img src="../static/image/image{{.ID}}.jpg" alt="Image">
+            </div>
+            <div class="corps">
+                <h2>{{.Titre}}</h2>
+                <h3>{{.ContenuCourt}}</h3>
+                <h3>Auteur: {{.Auteur}}</h3>
+            </div>
+        </div>
+        {{end}}
     </div>
-    {{end}}
     
     <footer>
         <div class="concepteurs">
@@ -49,10 +56,9 @@
             <h6> TICHIT Johan</h6>
         </div>
         <div class="informations">
-            <a href="/8ymmersion2/" style="color:black;"> Ymmersion 2</a>
-            <a href="/9contact/" style="color:black;"> Contact</a>
-            <a href="/10mentionslegales/" style="color:black;"> Mentions Légales</a>
-        </div>
+            <a href="/ymmersion2" style="color:black;"> Ymmersion 2</a>
+            <a href="/contact" style="color:black;"> Contact</a>
+            <a href="/mentionslegales" style="color:black;"> Mentions Légales</a>
     </footer>
 </body>
 </html>
